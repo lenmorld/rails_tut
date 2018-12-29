@@ -76,3 +76,8 @@ Adding routes manually:
 
 
 ![](2018-12-28-07-45-47.png)
+
+
+#### Layouts: globally applied to all templates
+
+`views/layouts/application.html.erb`
