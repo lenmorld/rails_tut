@@ -81,3 +81,13 @@ Adding routes manually:
 #### Layouts: globally applied to all templates
 
 `views/layouts/application.html.erb`
+
+
+#### Partials
+
+reusable pieces of view
+not rendered on their own
+always included from another view
+
+rendering a partial:
+`<%= render 'home/new_question_form' %>`
