@@ -5,20 +5,24 @@
             Featured
         </div>
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
+            <h5 class="card-title">Responses to post:</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 
             <div class="media mt-3">
-                <img src="https://picsum.photos/150?image=0" class="mr-3 mb-3" alt="...">
+                <img class="mr-3" src="<%= @question.gravatar %>"/>
+
+                <!-- <img src="https://picsum.photos/150?image=0" class="mr-3 mb-3" alt="..."> -->
                 <div class="media-body">
-                    <h5 class="mt-0">Question</h5>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
-                    purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-                    vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    <h5 class="mt-0">
+                        <%= @question.email %> said:</h5>
+                    <div class="container">
+                        <h6>
+                            <%= time_ago_in_words @question.created_at %>
+                        </h6>
+                        <%= @question.body %>
+                    </div>
                 </div>
             </div>
-
-            <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
 

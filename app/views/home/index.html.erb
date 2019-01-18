@@ -1,9 +1,7 @@
 <div class="container">
   <% @questions.each do |q| %>
   <div class="media mt-3">
-    <svg data-jdenticon-value="<%= q.gravatar %>" width="80" height="80">
-        Fallback text or image for browsers not supporting inline svg.
-    </svg>
+      <img class="mr-3" src="<%= q.gravatar %>"/>
 
     <!-- <img src="https://picsum.photos/150?image=0" class="mr-3 mb-3" alt="..."> -->
     <div class="media-body">
@@ -14,9 +12,10 @@
         </h6>
         <%= q.body %>
       </div>
-      <!-- <div>
-        <a href="/questions/12" class="btn btn-success btn-xs">View Answers</a>
-      </div> -->
+      <div>
+        <!-- <a href="/questions/12" class="btn btn-success btn-xs">View Answers</a> -->
+        <a href="<%= question_path(q) %>" class="btn btn-success btn-xs">View Answers</a>
+      </div>
     </div>
   </div>
   <% end %>

@@ -2,6 +2,6 @@ class Question < ApplicationRecord
     def gravatar
         # note that email and other Question members are directly accessible here
 
-        "#{Digest::MD5.hexdigest(email)}"
+        "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}?s=64&d=identicon"
     end
 end

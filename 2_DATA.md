@@ -86,3 +86,23 @@ from `{"email"=>"a@a.co", "question"=>"asdasd"}` to
 `<input name="question[email]">`
 
 ***
+
+![](2019-01-18-16-33-45.png)
+
+```
+Started GET "/questions/12" for 127.0.0.1 at 2019-01-18 16:33:20 -0500
+
+AbstractController::ActionNotFound (The action 'show' could not be found for QuestionsController):
+```
+
+*rails expects 'show' method form the controller
+
+![](2019-01-18-16-34-39.png)
+
+-> move `views/home/question.html.erb` to 
+`questions/show.html.erb`
+
+![](2019-01-18-16-40-13.png)
+
+![](rails_1.gif)
+
