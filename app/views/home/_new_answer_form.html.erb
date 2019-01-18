@@ -1,0 +1,37 @@
+<!-- Modal -->
+<div class="modal fade" id="new-answer-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <%# FORM HELPER to bypass ActionController::InvalidAuthenticityToken %>
+
+                <%= form_for :answer, url: '/answers', html: { class: 'form-horizontal' }  do %>
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+                        required placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputAnswer">Answer</label>
+                    <textarea type="text" name="question" class="form-control" id="inputAnswer" placeholder="answer"
+                        required>
+                    </textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -92,8 +92,10 @@ always included from another view
 rendering a partial:
 `<%= render 'home/new_question_form' %>`
 
-
-
 ## questions form and route
 
-![](2019-01-18-14-04-55.png)
+![](2019-01-18-14-07-10.png)
+
+## answers form and route
+
+![](2019-01-18-14-40-47.png)
