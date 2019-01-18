@@ -48,3 +48,41 @@ class HomeController < ApplicationController
 ### RAILS helpers
 built-in helper: `time_ago_in_words`
 `<%= time_ago_in_words q.created_at %>`
+
+
+### Rails handles routes by convention
+
+`routes.rb`
+  ...
+  `resources :questions`
+  
+  -> this will handle all requests for question
+
+
+form submit points to
+`/questions`,
+need to edit `QuestionsController` (which was generated before)
+
+when submit form
+![](2019-01-18-16-20-55.png)
+
+include a `create` method
+![](2019-01-18-16-24-17.png)
+
+
+```
+Started POST "/questions" for 127.0.0.1 at 2019-01-18 16:22:52 -0500
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WWgwKWBm8THHfamGMVKa0IdlX5cA3G0Q5adBk4/J+yMhqVc22JJu8680anJu4kkfqGrPDZyilNgiN+mqQAJTJw==", "email"=>"a@a.co", "question"=>"asdasd                        "}
+No template found for QuestionsController#create, rendering head :no_content
+Completed 204 No Content in 99ms (ActiveRecord: 0.0ms)
+```
+
+***
+
+from `{"email"=>"a@a.co", "question"=>"asdasd"}` to 
+`"question"=>{"email"=>"a@a.com", "body"=>"asdasdasd"}}`
+
+`<input name="question[email]">`
+
+***

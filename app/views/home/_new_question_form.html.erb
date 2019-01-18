@@ -15,11 +15,11 @@
                 <%# <form action="/questions" method="POST"> %>
                     <div class="form-group">
                         <label for="inputEmail">Email address</label>
-                        <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required placeholder="Enter email">
+                        <input type="email" name="question[email]" class="form-control" id="inputEmail" aria-describedby="emailHelp" required placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="inputQuestion">Question</label>
-                        <textarea type="text" name="question" class="form-control" id="inputQuestion" placeholder="ask question" required>
+                        <textarea type="text" name="question[body]" class="form-control" id="inputQuestion" placeholder="ask question" required>
                         </textarea>
                     </div>
                     <div class="modal-footer">
