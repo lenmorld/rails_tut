@@ -106,3 +106,73 @@ AbstractController::ActionNotFound (The action 'show' could not be found for Que
 
 ![](rails_1.gif)
 
+
+informative errors:
+
+![](2019-01-18-17-11-57.png)
+
+we can see all of the routes for question resource
+but none defined for answers
+
+### generate an answer resource
+
+1. generate resource
+` rails g resource answer question_id:integer email:string body:text`
+
+2. migrate
+`rake db:migrate`
+
+*NOTE*
+`rake routes` - to see all routes
+
+![](2019-01-18-17-14-12.png)
+
+![](2019-01-18-17-16-20.png)
+
+3. define `create`, `show`, etc
+
+![](2019-01-18-17-23-37.png)
+
+4. make sure form params follow the structure expected
+by the controller's safe param method
+
+![](2019-01-18-17-19-45.png)
+
+5. ... and all required params are supplied
+
+![](2019-01-18-17-22-11.png)
+
+
+6.verify
+
+![](2019-01-18-17-24-42.png)
+
+![](2019-01-18-17-25-29.png)
+
+
+
+## relationship
+
+a question has many answers
+
+`models/question.rb`
+```
+class Question < ApplicationRecord
+    has_many :answers
+
+    def gravatar
+    ...
+```
+
+`models/answer.rb`
+```
+class Answer < ApplicationRecord
+    belongs_to :question
+end
+```
+
+![](2019-01-18-17-32-57.png) 
+
+
+*answers view working*
+![](rails_1.gif)
