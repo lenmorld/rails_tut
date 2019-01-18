@@ -13,24 +13,26 @@
                 <%# FORM HELPER to bypass ActionController::InvalidAuthenticityToken %>
 
                 <%= form_for :answer, url: '/answers', html: { class: 'form-horizontal' }  do %>
+                
+                <input type="hidden" name="answer[question_id]" value="<%= @question.id %>"/>
+
                 <div class="form-group">
                     <label for="inputEmail">Email address</label>
-                    <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+                    <input type="email" name="answer[email]" class="form-control" id="inputEmail" aria-describedby="emailHelp"
                         required placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label for="inputAnswer">Answer</label>
-                    <textarea type="text" name="question" class="form-control" id="inputAnswer" placeholder="answer"
+                    <textarea type="text" name="answer[body]" class="form-control" id="inputAnswer" placeholder="answer"
                         required>
                     </textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
-
-                    <% end %>
                 </div>
+
+                <% end %>
             </div>
         </div>
     </div>
