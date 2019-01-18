@@ -99,3 +99,8 @@ rendering a partial:
 ## answers form and route
 
 ![](2019-01-18-14-40-47.png)
+
+
+# chapter 1 summary
+
+![](2019-01-18-14-42-36.png)
