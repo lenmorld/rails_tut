@@ -1,8 +1,13 @@
 class AnswersController < ApplicationController
 
     def create
+        question = Question.find(params[:answer][:question_id])
         Answer.create(answer_params)
-        redirect_to root_path
+
+        # question.answers.create(answer_params)
+
+        # rails figures out which URL to use given the question
+        redirect_to question
     end
 
     private

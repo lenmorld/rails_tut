@@ -35,34 +35,14 @@
 
     <!-- ANSWERS -->
 
+    <%= @question.answers.each do |answer| %>
     <div class="media mt-3">
-        <img src="https://picsum.photos/150?image=0" class="mr-3 mb-3" alt="...">
+            <img class="mr-3" src="<%= answer.gravatar %>"/>
         <div class="media-body">
-            <h5 class="mt-0">Answer 1</h5>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-            odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-            fringilla. Donec lacinia congue felis in faucibus.
+            <h5 class="mt-0"><%= answer.email %> responded:</h5>
+            <%= answer.body %>
         </div>
     </div>
-
-    <div class="media">
-        <img src="https://picsum.photos/150?image=1" class="mr-3 mb-3" alt="...">
-        <div class="media-body">
-            <h5 class="mt-0">Answer 1</h5>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-            odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-            fringilla. Donec lacinia congue felis in faucibus.
-        </div>
-    </div>
-
-    <div class="media">
-        <img src="https://picsum.photos/150?image=2" class="mr-3 mb-3" alt="...">
-        <div class="media-body">
-            <h5 class="mt-0">Answer 1</h5>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-            odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-            fringilla. Donec lacinia congue felis in faucibus.
-        </div>
-    </div>
+    <% end %>
 
 </div>
