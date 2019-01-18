@@ -43,3 +43,8 @@ class HomeController < ApplicationController
     <%= q.email %> said:
         <%= q.body %>
 ```
+
+
+### RAILS helpers
+built-in helper: `time_ago_in_words`
+`<%= time_ago_in_words q.created_at %>`

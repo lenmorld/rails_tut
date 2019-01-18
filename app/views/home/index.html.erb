@@ -8,9 +8,12 @@
     <!-- <img src="https://picsum.photos/150?image=0" class="mr-3 mb-3" alt="..."> -->
     <div class="media-body">
       <h5 class="mt-0"><%= q.email %> said:</h5>
-      <p>
+      <div class="container">
+        <h6>
+          <%= time_ago_in_words q.created_at %>
+        </h6>
         <%= q.body %>
-      </p>
+      </div>
       <!-- <div>
         <a href="/questions/12" class="btn btn-success btn-xs">View Answers</a>
       </div> -->
