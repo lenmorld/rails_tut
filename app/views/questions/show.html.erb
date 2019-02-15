@@ -27,8 +27,7 @@
     </div>
 
     <div>
-        <a href="/questions/12" class="btn btn-success btn-xs" data-toggle="modal" data-target="#new-answer-modal">Submit
-            an Answer</a>
+        <a href="/questions/12" class="btn btn-success btn-xs" data-toggle="modal" data-target="#new-answer-modal">Post a Comment</a>
     </div>
 
     <%= render 'home/new_answer_form' %>
@@ -43,6 +42,10 @@
             <%= answer.body %>
         </div>
     </div>
+    <% end %>
+
+    <% if @question.answers.empty? %>
+        <div class="alert alert-info">No comments here. Add one!</div>
     <% end %>
 
 </div>

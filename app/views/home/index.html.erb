@@ -19,4 +19,8 @@
     </div>
   </div>
   <% end %>
+
+  <% if @questions.empty? %>
+    <div class="alert alert-info">No posts here. Start one!</div>
+  <% end %>
 </div>
