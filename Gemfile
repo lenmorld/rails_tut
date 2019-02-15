@@ -75,3 +75,4 @@ end
 
 gem 'sucker_punch'
 gem 'bootstrap-sass'
+gem 'sqlite3'
