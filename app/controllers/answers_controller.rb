@@ -7,7 +7,10 @@ class AnswersController < ApplicationController
         # question.answers.create(answer_params)
 
         # prepare email then send it
-        MainMailer.notify_question_author(answer).deliver_now
+        # MainMailer.notify_question_author(answer).deliver_now
+
+        # ActiveJob so user won't wait
+        MainMailer.notify_question_author(answer).deliver_later
 
         # save email in session
         session[:current_user_email] = answer_params[:email]
