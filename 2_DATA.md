@@ -9,7 +9,7 @@ same, but with RESTful routes
 -> generates model in `models/question.rb`
 edit the migration
 
-![](2019-01-18-14-49-57.png)
+![](screens/2019-01-18-14-49-57.png)
 
 ## run the migrations
 
@@ -17,7 +17,7 @@ edit the migration
 
 `rails console`
 
-![](2019-01-18-15-00-56.png)
+![](screens/2019-01-18-15-00-56.png)
 
 ActiveRecord lines
 get translated to SQL
@@ -64,14 +64,14 @@ form submit points to
 need to edit `QuestionsController` (which was generated before)
 
 when submit form
-![](2019-01-18-16-20-55.png)
+![](screens/2019-01-18-16-20-55.png)
 
 include a `create` method
-![](2019-01-18-16-24-17.png)
+![](screens/2019-01-18-16-24-17.png)
 
 
 ```
-Started POST "/questions" for 127.0.0.1 at 2019-01-18 16:22:52 -0500
+Started POST "/questions" for 127.0.0.1 at screens/2019-01-18 16:22:52 -0500
 Processing by QuestionsController#create as HTML
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"WWgwKWBm8THHfamGMVKa0IdlX5cA3G0Q5adBk4/J+yMhqVc22JJu8680anJu4kkfqGrPDZyilNgiN+mqQAJTJw==", "email"=>"a@a.co", "question"=>"asdasd                        "}
 No template found for QuestionsController#create, rendering head :no_content
@@ -87,29 +87,29 @@ from `{"email"=>"a@a.co", "question"=>"asdasd"}` to
 
 ***
 
-![](2019-01-18-16-33-45.png)
+![](screens/2019-01-18-16-33-45.png)
 
 ```
-Started GET "/questions/12" for 127.0.0.1 at 2019-01-18 16:33:20 -0500
+Started GET "/questions/12" for 127.0.0.1 at screens/2019-01-18 16:33:20 -0500
 
 AbstractController::ActionNotFound (The action 'show' could not be found for QuestionsController):
 ```
 
 *rails expects 'show' method form the controller
 
-![](2019-01-18-16-34-39.png)
+![](screens/2019-01-18-16-34-39.png)
 
 -> move `views/home/question.html.erb` to 
 `questions/show.html.erb`
 
-![](2019-01-18-16-40-13.png)
+![](screens/2019-01-18-16-40-13.png)
 
-![](rails_1.gif)
+![](screens/rails_1.gif)
 
 
 informative errors:
 
-![](2019-01-18-17-11-57.png)
+![](screens/2019-01-18-17-11-57.png)
 
 we can see all of the routes for question resource
 but none defined for answers
@@ -125,29 +125,29 @@ but none defined for answers
 *NOTE*
 `rake routes` - to see all routes
 
-![](2019-01-18-17-14-12.png)
+![](screens/2019-01-18-17-14-12.png)
 
-![](2019-01-18-17-16-20.png)
+![](screens/2019-01-18-17-16-20.png)
 
 3. define `create`, `show`, etc
 
-![](2019-01-18-17-23-37.png)
+![](screens/2019-01-18-17-23-37.png)
 
 4. make sure form params follow the structure expected
 by the controller's safe param method
 
-![](2019-01-18-17-19-45.png)
+![](screens/2019-01-18-17-19-45.png)
 
 5. ... and all required params are supplied
 
-![](2019-01-18-17-22-11.png)
+![](screens/2019-01-18-17-22-11.png)
 
 
 6.verify
 
-![](2019-01-18-17-24-42.png)
+![](screens/2019-01-18-17-24-42.png)
 
-![](2019-01-18-17-25-29.png)
+![](screens/2019-01-18-17-25-29.png)
 
 
 
@@ -171,8 +171,8 @@ class Answer < ApplicationRecord
 end
 ```
 
-![](2019-01-18-17-32-57.png) 
+![](screens/2019-01-18-17-32-57.png) 
 
 
 *answers view working*
-![](rails_1.gif)
+![](screens/rails_1.gif)
