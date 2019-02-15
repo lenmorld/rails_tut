@@ -1,25 +1,26 @@
 <div class="container">
-  <% @questions.each do |q| %>
-  <div class="media mt-3">
-      <img class="mr-3" src="<%= q.gravatar %>"/>
-
-    <!-- <img src="https://picsum.photos/150?image=0" class="mr-3 mb-3" alt="..."> -->
-    <div class="media-body">
-      <h5 class="mt-0"><%= q.email %> said:</h5>
-      <div class="container">
-        <h6>
-          <%= time_ago_in_words q.created_at %>
-        </h6>
-        <%= q.body %>
+  <div class="boxes">
+      <% @questions.each do |q| %>
+      <div class="media mt-3">
+          <img class="mr-3" src="<%= q.gravatar %>"/>
+    
+        <!-- <img src="https://picsum.photos/150?image=0" class="mr-3 mb-3" alt="..."> -->
+        <div class="media-body box-container">
+          <h5 class="mt-0"><%= q.email %> said:</h5>
+          <div class="time">
+              <%= time_ago_in_words q.created_at %>
+          </div>
+          <div class="container">
+            <%= q.body %>
+          </div>
+          <div>
+            <!-- <a href="/questions/12" class="btn btn-success btn-xs">View Answers</a> -->
+            <a href="<%= question_path(q) %>" class="btn btn-success btn-xs">View Answers</a>
+          </div>
+        </div>
       </div>
-      <div>
-        <!-- <a href="/questions/12" class="btn btn-success btn-xs">View Answers</a> -->
-        <a href="<%= question_path(q) %>" class="btn btn-success btn-xs">View Answers</a>
-      </div>
-    </div>
+      <% end %>
   </div>
-  <% end %>
-
   <% if @questions.empty? %>
     <div class="alert alert-info">No posts here. Start one!</div>
   <% end %>
