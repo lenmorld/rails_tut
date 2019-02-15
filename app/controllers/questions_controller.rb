@@ -4,6 +4,10 @@ class QuestionsController < ApplicationController
         # Question.create(params[:question])
 
         Question.create(question_params)
+
+        # save email in session
+        session[:current_user_email] = question_params[:email]
+
         redirect_to root_path
     end
 

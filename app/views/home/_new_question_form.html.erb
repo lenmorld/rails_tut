@@ -15,7 +15,7 @@
                 <%# <form action="/questions" method="POST"> %>
                     <div class="form-group">
                         <label for="inputEmail">Email address</label>
-                        <input type="email" name="question[email]" class="form-control" id="inputEmail" aria-describedby="emailHelp" required placeholder="Enter email">
+                        <input type="email" name="question[email]" class="form-control" value="<%= current_user_email %>" id="inputEmail" aria-describedby="emailHelp" required placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="inputQuestion">Question</label>
