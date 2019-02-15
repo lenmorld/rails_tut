@@ -14,3 +14,14 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+// I REFUSE TO USE COFFEESCRIPT!
+
+document.addEventListener("DOMContentLoaded", function() {
+    // console.log(1);
+});
+
+document.addEventListener('click', function(event) {
+    // 
+});
