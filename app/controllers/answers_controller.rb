@@ -2,8 +2,12 @@ class AnswersController < ApplicationController
 
     def create
         question = Question.find(params[:answer][:question_id])
-        Answer.create(answer_params)
+        
+        answer = Answer.create(answer_params)
         # question.answers.create(answer_params)
+
+        # prepare email then send it
+        MainMailer.notify_question_author(answer).deliver_now
 
         # save email in session
         session[:current_user_email] = answer_params[:email]
