@@ -95,7 +95,7 @@ Started GET "/questions/12" for 127.0.0.1 at screens/2019-01-18 16:33:20 -0500
 AbstractController::ActionNotFound (The action 'show' could not be found for QuestionsController):
 ```
 
-*rails expects 'show' method form the controller
+*rails expects 'show' method from the controller
 
 ![](screens/2019-01-18-16-34-39.png)
 
