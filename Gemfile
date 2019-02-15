@@ -74,3 +74,4 @@ group :development do
 end
 
 gem 'sucker_punch'
+gem 'bootstrap-sass'
