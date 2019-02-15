@@ -11,7 +11,7 @@
               <%= time_ago_in_words q.created_at %>
           </div>
           <div class="container">
-            <%= q.body %>
+            <%= truncate q.body, length: 300 %>
           </div>
           <div>
             <!-- <a href="/questions/12" class="btn btn-success btn-xs">View Answers</a> -->
